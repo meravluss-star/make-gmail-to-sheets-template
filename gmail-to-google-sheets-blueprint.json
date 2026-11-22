@@ -1,0 +1,62 @@
+{
+  "name": "Gmail to Google Sheets - simple template",
+  "flow": [
+    {
+      "id": 1,
+      "module": "google-email:triggerWatchNewEmails",
+      "version": 4,
+      "parameters": {
+        "filterType": "gmailSearch",
+        "q": "in:inbox",
+        "markSeen": false,
+        "limit": 10
+      },
+      "mapper": {},
+      "metadata": {
+        "designer": { "x": 0, "y": 0 }
+      }
+    },
+    {
+      "id": 2,
+      "module": "google-sheets:addRow",
+      "version": 2,
+      "parameters": {},
+      "mapper": {
+        "mode": "fromAll",
+        "values": {
+          "0": "{{1.internalDate}}",
+          "1": "{{1.fromEmail}}",
+          "2": "{{1.subject}}",
+          "3": "https://mail.google.com/mail/u/0/#inbox/{{1.id}}"
+        },
+        "sheetId": "",
+        "spreadsheetId": "",
+        "includesHeaders": true,
+        "insertDataOption": "INSERT_ROWS",
+        "useColumnHeaders": false,
+        "valueInputOption": "USER_ENTERED",
+        "insertUnformatted": false
+      },
+      "metadata": {
+        "designer": { "x": 300, "y": 0 }
+      }
+    }
+  ],
+  "metadata": {
+    "instant": false,
+    "version": 1,
+    "scenario": {
+      "roundtrips": 1,
+      "maxErrors": 3,
+      "autoCommit": true,
+      "autoCommitTriggerLast": true,
+      "sequential": false,
+      "slots": null,
+      "confidential": false,
+      "dataloss": false,
+      "dlq": false,
+      "freshVariables": false
+    },
+    "designer": { "orphans": [] }
+  }
+}
