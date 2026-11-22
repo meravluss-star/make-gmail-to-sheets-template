@@ -32,6 +32,7 @@
         "sheetId": "",
         "spreadsheetId": "",
         "includesHeaders": true,
+        "tableFirstRow": "A1:Z1",
         "insertDataOption": "INSERT_ROWS",
         "useColumnHeaders": false,
         "valueInputOption": "USER_ENTERED",
