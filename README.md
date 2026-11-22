@@ -27,6 +27,11 @@ Gmail (Watch emails)  ->  Google Sheets (Add a Row)
 5. Open the **Google Sheets** module, create a connection, then choose your spreadsheet and sheet. Make sure **Column range** is set (the template uses `A1:Z1`, the row that holds your headers); if it is empty, Run once fails with "Validation failed for 1 parameter(s)".
 6. Click **Run once** and check that a row appears in the sheet.
 
+## Files
+
+- `gmail-to-google-sheets-blueprint.json` - the clean template to import (no connections, no spreadsheet).
+- `imported-working-scenario-blueprint.json` - the same scenario after it was imported into Make, connected to a Gmail account and a Google Sheet, and run successfully (a row was added to the sheet). The connection and spreadsheet IDs in it belong to the original account.
+
 ## Notes
 
 - The blueprint has no connections, spreadsheet ID or personal data: you choose them after importing.
